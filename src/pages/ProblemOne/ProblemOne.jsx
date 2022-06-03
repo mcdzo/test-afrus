@@ -22,10 +22,10 @@ const ProblemOne = () => {
     setN2("");
   };
   return (
-    <section className="bg-slate-800 text-white w-5/6 h-full flex flex-col items-center justify-start">
+    <section className="bg-slate-800 text-white w-full h-full flex flex-col items-center justify-start">
       <h1 className="my-6 text-5xl font-bold">Problema 1</h1>
       <h2 className="my-4 text-xl">Ingrese Dos Numeros a multiplicar</h2>
-      <div className="w-full h-24 flex flex-row items-center ">
+      <div className="w-full h-24 flex flex-row items-center justify-center ">
         <label className="mx-4">Numero 1:</label>
         <input
           onChange={handleNumberOne}

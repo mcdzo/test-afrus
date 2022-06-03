@@ -7,7 +7,7 @@ import Navbar from "./pages/components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="w-screen h-screen flex flex-row">
+    <div className="w-screen h-screen flex flex-col">
       <Navbar />
       <Routes>
         <Route path="/" element={<ProblemOne />}></Route>
