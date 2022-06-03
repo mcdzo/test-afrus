@@ -3,7 +3,8 @@ import "./App.css";
 import ProblemOne from "./pages/ProblemOne/ProblemOne";
 import ProblemTwo from "./pages/ProblemTwo/ProblemTwo";
 import ProblemSix from "./pages/ProblemSix/ProblemSix";
-import Navbar from "./pages/components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+import ProblemSeven from "./pages/ProblemSeven/ProblemSeven";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<ProblemOne />}></Route>
         <Route path="/two" element={<ProblemTwo />}></Route>
         <Route path="/six" element={<ProblemSix />}></Route>
+        <Route path="/seven" element={<ProblemSeven />}></Route>
       </Routes>
     </div>
   );
