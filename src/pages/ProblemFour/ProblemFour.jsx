@@ -99,20 +99,7 @@ const ProblemFour = () => {
     let min = minNumber();
     let minPercentage = minimumPercentage(min, max);
     let averagePercen = averagePercentage(max);
-    console.log("Total de elementos: ", total);
-    console.log("Porcentaje pares: ", evenPercentage);
-    console.log("Porcentaje impares: ", oddPercentage);
-    console.log("Porcentaje mayor a mil: ", percentage);
-    console.log("Max: ", max);
-    console.log("Min: ", min);
-    console.log(
-      "Porcentaje del minimo: ",
-      minPercentage
-    );
-    console.log(
-      "Porcentaje del promedio con respecto al maximo",
-      averagePercen
-    );
+  
     setTotal(total);
     setEvenPercentage(evenPercentage.toString().slice(0,4));
     setOddPercentage(oddPercentage.toString().slice(0,4));
