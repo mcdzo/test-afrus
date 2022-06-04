@@ -31,7 +31,6 @@ const ProblemSix = () => {
           if (res.status === 200) {
             const pokemon = res.data;
             setPokemon(pokemon);
-            console.log(pokemon);
           }
         })
         .catch((err) => {
