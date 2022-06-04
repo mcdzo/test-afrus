@@ -5,6 +5,7 @@ import ProblemTwo from "./pages/ProblemTwo/ProblemTwo";
 import ProblemSix from "./pages/ProblemSix/ProblemSix";
 import Navbar from "./components/Navbar/Navbar";
 import ProblemSeven from "./pages/ProblemSeven/ProblemSeven";
+import ProblemFour from "./pages/ProblemFour/ProblemFour";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProblemOne />}></Route>
         <Route path="/two" element={<ProblemTwo />}></Route>
+        <Route path="/four" element={<ProblemFour />}></Route>
         <Route path="/six" element={<ProblemSix />}></Route>
         <Route path="/seven" element={<ProblemSeven />}></Route>
       </Routes>

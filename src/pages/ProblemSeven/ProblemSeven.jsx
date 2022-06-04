@@ -104,16 +104,19 @@ const ProblemSeven = () => {
               type="text"
             ></input>
           </div>
-          <button
-            onClick={onClean}
-            className="mx-6 px-4 py-2 border-2 border-orange-600 text-white rounded-md hover:bg-orange-600 hover:text-white"
-          >
-            Limpiar Formulario
-          </button>
+         
           <button className="mx-6 px-4 py-2 bg-orange-600 rounded-md hover:bg-orange-500 hover:text-white">
             Agregar Tarea
           </button>
+          <button
+          type="button"
+            onClick={onClean}
+            className="mx-6 px-4 py-2 text-white rounded-md hover:text-orange-400"
+          >
+            Limpiar Formulario
+          </button>
         </form>
+        
       </div>
 
       {tasks.length > 0 &&

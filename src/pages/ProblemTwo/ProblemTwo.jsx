@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProblemTwo = () => {
   /*-------------------------------------First Point------------------------------------------*/
@@ -98,68 +98,7 @@ const ProblemTwo = () => {
     }
   };
 
-  /*-------------------------------------Fifth Point------------------------------------------*/
-
-  const [id, setId] = useState("");
-  const [arrayOfIds, setArrayOfIds] = useState([]);
-
-  const [indicator, setIndicator] = useState("");
-  const [pokemons, setPokemons] = useState([]);
-
-  const handleId = (evt) => {
-    setId(evt.target.value);
-  };
-
-  const handleIndicator = (evt) => {
-    setIndicator(evt.target.value);
-  };
-  const addToArray = (id) => {
-    const alredyExists = arrayOfIds.filter((element) => element === id);
-    if (id > 0 && alredyExists.length === 0) {
-      setArrayOfIds([...arrayOfIds, id]);
-    }
-    setId("");
-  };
-
-  const searchPokemons = (array, indicator) => {
-    console.log(indicator);
-    console.log(array)
-    array.forEach((id) => {
-      console.log(id)
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`).then((res) => {
-        if (res.status === 200) {
-          console.log(res);
-          const pokemon = res.data;
-
-          setPokemons([...pokemons, pokemon]);
-        }
-      });
-    });
-    console.log(pokemons, "----")
-    switch (indicator) {
-      case "name":
-        const byName = pokemons.sort((a, b) => {
-          const nameA = a.name;
-          const nameB = b.name;
-
-          return nameB - nameA;
-        });
-        return setPokemons(byName);
-      case "type":
-        pokemons;
-      case "weight":
-        const byWeight = pokemons.sort((a, b) => {
-          const weightA = a.weight;
-          const weightB = b.weight;
-
-          return weightB - weightA;
-        });
-        return setPokemons(byWeight);
-      default:
-        pokemons;
-    }
-
-  };
+  
 
   return (
     <section className="bg-slate-800 text-white w-full h-auto flex flex-col items-center justify-start">
@@ -279,63 +218,7 @@ const ProblemTwo = () => {
             </div>
           ))}
       </div>
-      <div className="w-full h-24 flex my-6 flex-row items-center justify-center">
-        <label className="mx-4">Ingrese numero de pokemon:</label>
-        <input
-          onChange={handleId}
-          value={id}
-          className="mx-4 px-4 w-24 h-10 bg-slate-700"
-          type="number"
-          min="0"
-        ></input>
-        <button
-          onClick={() => addToArray(id)}
-          className="mx-6 px-4 py-2 bg-orange-700 rounded-md hover:bg-orange-600 hover:text-white"
-        >
-          Agregar numero de pokemon a Buscar
-        </button>
-        <span className="text-xl">
-          Pokemones a Buscar por numero:{" "}
-          {arrayOfIds.map((id, key) => (
-            <div key={key}>"{id}"</div>
-          ))}
-        </span>
-      </div>
-      <label>Ordenar por:</label>
-      <select
-        className="text-black"
-        name="indicator"
-        onChange={handleIndicator}
-      >
-        <option value="name">Nombre</option>
-        <option value="type">Tipo</option>
-        <option value="weight">Peso</option>
-      </select>
-
-      <button
-        onClick={() => searchPokemons(arrayOfIds, indicator)}
-        className="mx-6 my-4 px-4 py-2 bg-orange-700 rounded-md hover:bg-orange-600 hover:text-white"
-      >
-        Buscar
-      </button>
-      <div className="w-1/2 h-72 my-2 flex flex-col items-center overflow-y-auto bg-slate-600">
-        <span className="text-xl">Pokemones ordenados:</span>
-        {indicator === "name" && (
-          <div>
-            <div>Por Nombre: </div>
-          </div>
-        )}
-        {indicator === "type" && (
-          <div>
-            <div>Por Tipo: </div>
-          </div>
-        )}
-        {indicator === "weight" && (
-          <div>
-            <div>Por Peso: </div>
-          </div>
-        )}
-      </div>
+      
     </section>
   );
 };
