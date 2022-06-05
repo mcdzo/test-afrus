@@ -72,7 +72,7 @@ const ProblemFour = () => {
   };
 
   const minimumPercentage = (n, max) => {
-    let minPercentage = (n / max) * 100;
+    let minPercentage = (parseInt(n) / parseInt(max)) * 100;
 
     return minPercentage;
   };
@@ -101,17 +101,17 @@ const ProblemFour = () => {
     let averagePercen = averagePercentage(max);
   
     setTotal(total);
-    setEvenPercentage(evenPercentage.toString().slice(0,4));
-    setOddPercentage(oddPercentage.toString().slice(0,4));
-    setPercentage(percentage.toString().slice(0,4));
+    setEvenPercentage(evenPercentage);
+    setOddPercentage(oddPercentage);
+    setPercentage(percentage);
     setMax(max);
     setMin(min);
-    setMinPercentage(minPercentage.toString().slice(0,4));
-    setAvPercentage(averagePercen.toString().slice(0,4));
+    setMinPercentage(minPercentage);
+    setAvPercentage(averagePercen);
   };
 
   return (
-    <section className="bg-slate-800 text-white w-full h-screen overflow-y-auto flex flex-col items-center justify-start">
+    <section className="bg-slate-800 text-white w-full h-auto flex flex-col items-center justify-center">
       <h1 className="my-6 text-5xl font-bold">Problema 4</h1>
 
       <form
@@ -140,6 +140,7 @@ const ProblemFour = () => {
           </div>
         ))}
       </span>
+    
       <button
         type="button"
         onClick={evaluateData}
